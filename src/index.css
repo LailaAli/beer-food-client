@@ -1,5 +1,165 @@
 body {
-  margin: 30px;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Caudex', serif;
 }
+
+h2 {
+    font-size: 1.4em;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-size: 1.2em;
+    letter-spacing: .2em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p {
+    display: flex;
+    text-align: justify;
+    font-size: 1.05em;
+    letter-spacing: .08em;
+    line-height: 1.6em;
+    padding: 1.5em;
+}
+
+.hr {
+    display: flex;
+    border: 0.5px solid rgb(206, 123, 50);
+    width: 3em;
+    margin: auto auto 3em auto;
+}
+
+
+/* HEADER */
+
+.header {
+    background: url('http://www.bbqbossusa.com/wp-content/uploads/2016/09/BBQ-BOSS-Wood-Background-1600.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-bottom: 1em;
+    color: white;
+}
+
+.search-bar-background {
+    background: linear-gradient( rgba(20, 20, 20, .7), rgba(20, 20, 20, .7));
+    padding-bottom: 3em;
+}
+
+
+/* LOGO */
+
+
+/* SEARCH BAR */
+
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.search-input-box {
+    display: flex;
+    width: 215px;
+    height: 28px;
+    background-color: transparent;
+    border: 1px solid #ffb76b;
+    box-sizing: border-box;
+    border-radius: 10px 0px;
+    margin-right: 20px;
+    color: white;
+    text-align: center;
+    letter-spacing: .09em;
+    font-size: 1.05em;
+    /* text-transform: uppercase;     */
+}
+
+
+/* SEARCH BUTTON */
+
+.go-btn {
+    background-color: transparent;
+    border: 1px solid #ffb76b;
+    box-sizing: border-box;
+    border-radius: 0px 10px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    padding: 4px 8px;
+    text-align: center;
+    letter-spacing: .09em;
+    /* text-transform: uppercase;     */
+}
+
+
+/* CURRENT BEER */
+
+.current-beer-container {
+    display: flex;
+    justify-content: center;
+}
+
+h2.current-beer {
+    display: flex;
+    margin: 50px auto;
+}
+
+
+/* INFORMATION SECTIONS */
+
+.flex-props {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* FOOD PAIRING SECTION */
+
+.food-pairing-container {
+    margin-top: 5em;
+    margin-bottom: 3em;
+}
+
+
+/* DESCRIPTION SECTION */
+
+.beer-description-container {
+    background: linear-gradient( rgba(20, 20, 20, .7), rgba(20, 20, 20, .7)), url('https://www.kegworks.com/wp/wp-content/uploads/2014/01/savor-craft-beer-food-pairing.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-top: 2.5em;
+    padding-bottom: 1em;
+    color: #e2e2e2;
+}
+
+
+/* RELATED BEER SECTION */
+
+.related-beer-container {
+    margin-top: 4em;
+    margin-bottom: .5em;
+}
+
+.beer-list {
+    column-count: 2;
+    list-style: none;
+    margin: auto 10px 30px 10px;
+}
+
+.beer-img {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.related-beer-img {
+    /* background-size: cover; */
+    height: 150%;
+    background-position: center center;
+}
+
+
+/* IMAGES */

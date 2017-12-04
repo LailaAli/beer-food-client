@@ -1,37 +1,33 @@
 import React, { Component } from 'react';
-import { add } from '../actions';
+import { go } from '../actions';
 import { connect } from 'react-redux';
 
 class SearchBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            search: 'Two Hearted Ale ',
-            missingBeer: ' '
-        }
-    }
     render() {
         return (
-            <div className="input-form-container">
-                <input onChange={this.handleFirstNumChange} type='text' placeholder='Search for a beer' value={this.state.search} />
+            <div className="search-bar-container">
+                <input onChange={this.handleSearchChange} type='text' placeholder='Search for a beer' value={this.props.searchInput} className='search-input-box'/>
+
                 <div className='btn-operators'>
-                    <button onClick={this.handleBtnClick} type='button' className='add-btn'>go</button>
+                    <button onClick={this.handleBtnClick} type='button' className='go-btn'>Go</button>
                 </div>
+                
             </div>
         );
     }
-    handleFirstNumChange = (event) => {
+
+    handleSearchChange = (event) => {
         this.setState({
-            firstNumber: Number(event.target.value)
+            searchInput: event.target.value
         })
     }
 
     handleBtnClick = (event) => {
-        this.props.add(this.state.firstNumber, this.state.secondNumber)
+        this.props.go(this.state.searchInput)
     }
 
 }
 
-const mapActionsToProps = { add }
+const mapActionsToProps = { go }
 
 export default connect(null, mapActionsToProps)(SearchBar);
