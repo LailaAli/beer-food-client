@@ -145,6 +145,7 @@ h2.current-beer {
 
 .beer-list {
     column-count: 2;
+    line-height: 2em;
     list-style: none;
     margin: auto 10px 30px 10px;
 }
