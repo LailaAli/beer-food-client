@@ -1,23 +1,19 @@
 const INITIAL_STATE = {
-    searchInput: 'Two Hearted Ale',
-    notFound: ' '
+  searchInput: [],
+  notFound: ""
+};
+
+export default function(state = INITIAL_STATE, action) {
+  switch (action.type) {
+    case 'RECEIVE_ITEMS':
+      return receiveItems(state, action);
+    default:
+      return state;
+  }
 }
 
-export default function (state = INITIAL_STATE, action) {
-    switch (action.type) {
-        case "GO":
-            return go(state, action.searchInput)
-        default:
-            return state;
-    }
+function receiveItems(state, action) {
+  return Object.assign({}, state, {
+    searchInput: action.items
+  });
 }
-
-function go(state, searchInput) {
-    const result='';  //searchInputData;
-
-    return Object.assign({}, state, {
-        searchInput: result
-    });
-}
-
-

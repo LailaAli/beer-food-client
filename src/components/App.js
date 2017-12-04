@@ -32,13 +32,14 @@ class App extends Component {
                     </div>
                 </div>
 
-                <div className='food-pairing-container flex props'>
-                    <h3 className='food-pairing'> Food Pairing</h3>
-                    <div className='hr'></div>
-                    <p>{this.state.beerData.foodPairings}</p>
-                </div>
-
                 <div className='content-flex-container'>
+                    <div className='food-pairing-container flex props'>
+                        <h3 className='food-pairing'> Food Pairing</h3>
+                        <div className='hr'></div>
+                        <p>{this.state.beerData.foodPairings}</p>
+                    </div>
+
+
                     <div className='beer-description-container flex-props'>
                         <h3 className='beer-description'> Beer Description</h3>
                         <div className='hr'></div>
@@ -60,7 +61,7 @@ class App extends Component {
                             <img className='related-beer-img' src='http://clipart-library.com/images/zcX5zyKgi.jpg' />
                         </div>
                     </div>
-                </div>
+                </div> {/* END FLEX-CONTAINER */}
 
             </div>
         );

@@ -53,6 +53,13 @@ p {
 
 /* LOGO */
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 
 /* SEARCH BAR */
 
@@ -163,4 +170,120 @@ h2.current-beer {
 }
 
 
-/* IMAGES */
+/* MEDIA SIZES */
+
+@media screen and (min-width: 768px) {
+    /* HEADER */
+    .header {
+        background: url('https://static.vinepair.com/wp-content/uploads/2015/08/craft-beer-definition-social.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding-bottom: 1em;
+        color: white;
+    }
+    /* FOOD PAIRING SECTION */
+    .food-pairing-container {
+        margin-top: 5em;
+        margin-bottom: 3em;
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+    /* DESCRIPTION SECTION */
+    .beer-description-container {
+        display: flex;
+        flex-direction: column;
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+    /* RELATED BEER SECTION */
+    .beer-list {
+        column-width: 400px 2;
+        column-gap: 30px;
+        line-height: 2em;
+        list-style: none;
+        margin: auto auto 50px auto;
+    }
+    .beer-img {
+        display: flex;
+        justify-content: center;
+        height: 100px;
+    }
+    .related-beer-img {
+        /* background-size: cover; */
+        height: 150%;
+        background-position: center center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* FOOD PAIRING SECTION */
+    .food-pairing-container {
+        margin-top: 5em;
+        margin-bottom: 3em;
+        padding-right: 200px;
+        padding-left: 200px;
+    }
+    /* DESCRIPTION SECTION */
+    .beer-description-container {
+        display: flex;
+        flex-direction: column;
+        padding-right: 200px;
+        padding-left: 200px;
+    }
+
+        /* RELATED BEER SECTION */
+        .beer-list {
+            column-width: 400px 2;
+            column-gap: 30px;
+            line-height: 2em;
+            list-style: none;
+            margin: auto auto 50px auto;
+        }
+        .beer-img {
+            display: flex;
+            justify-content: center;
+            height: 200px;
+        }
+        .related-beer-img {
+            /* background-size: cover; */
+            height: 100%;
+            background-position: center center;
+        }
+}
+
+@media screen and (min-width: 1440px) {
+    /* FOOD PAIRING SECTION */
+    .food-pairing-container {
+        margin-top: 5em;
+        margin-bottom: 3em;
+        padding-right: 200px;
+        padding-left: 200px;
+    }
+    /* DESCRIPTION SECTION */
+    .beer-description-container {
+        display: flex;
+        flex-direction: column;
+        padding-right: 200px;
+        padding-left: 200px;
+    }
+
+        /* RELATED BEER SECTION */
+        .beer-list {
+            column-width: 400px 2;
+            column-gap: 30px;
+            line-height: 2em;
+            list-style: none;
+            margin: auto auto 50px auto;
+        }
+        .beer-img {
+            display: flex;
+            justify-content: center;
+            height: 200px;
+        }
+        .related-beer-img {
+            /* background-size: cover; */
+            height: 100%;
+            background-position: center center;
+        }
+}

@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import { go } from '../actions';
+import { fetchItems } from '../actions';
 import { connect } from 'react-redux';
 
 class SearchBar extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searchInput: ' '
+        }
+    }
     render() {
         return (
             <div className="search-bar-container">
@@ -23,11 +29,11 @@ class SearchBar extends Component {
     }
 
     handleBtnClick = (event) => {
-        this.props.go(this.state.searchInput)
+        this.props.fetchItems(this.state.searchInput)
     }
 
 }
 
-const mapActionsToProps = { go }
+const mapActionsToProps = { fetchItems }
 
 export default connect(null, mapActionsToProps)(SearchBar);
