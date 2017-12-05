@@ -7,8 +7,9 @@ export function fetchItems(searchInput) {
         console.log(searchInput);
         
         $.get("http://localhost:5000/api/?search=" + searchInput).done(function(data) {
-            console.log(data)
-            dispatch(receiveItems(data[0]));
+        console.log("here is the data from actions")    
+        console.log( data)
+            dispatch(receiveItems(data));
         });
     };
 }

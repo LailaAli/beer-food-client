@@ -1,7 +1,7 @@
-import Beer from '../components/response';
+import beer from '../components/response';
 
 const INITIAL_STATE = {
-    beerData: [Beer]
+    beerData: [beer]
 };
 
 export default function (state = INITIAL_STATE, action) {

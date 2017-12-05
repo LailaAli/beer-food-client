@@ -104,7 +104,7 @@ class Beer extends Component {
 
 
 function mapStateToProps(state) {
-    // console.log(state.beerData);
+    console.log(state.beerData);
     return {
         beerData: state.beerData[0],
     }
