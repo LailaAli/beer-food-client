@@ -1,7 +1,7 @@
-import foo from '../components/response';
+import Beer from '../components/response';
 
 const INITIAL_STATE = {
-    beerData: foo,
+    beerData: Beer,
 };
 
 export default function (state = INITIAL_STATE, action) {

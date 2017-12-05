@@ -18,7 +18,7 @@ class Beer extends Component {
                     <div className='food-pairing-container flex props'>
                         <h3 className='food-pairing'> Food Pairing</h3>
                         <div className='hr'></div>
-                        <p>{this.props.beerData.foodpairing}</p>
+                        <p>{this.props.beerData.foodPairings}</p>
                     </div>
 
                     {/* BEER DESC SECTION */}
