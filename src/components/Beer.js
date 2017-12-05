@@ -18,14 +18,14 @@ class Beer extends Component {
                     <div className='food-pairing-container flex props'>
                         <h3 className='food-pairing'> Food Pairing</h3>
                         <div className='hr'></div>
-                        <p>{this.props.beerData.foodPairings}</p>
+                        {this.handleFoodMsg()}
                     </div>
 
                     {/* BEER DESC SECTION */}
                     <div className='beer-description-container flex-props'>
                         <h3 className='beer-description'> Beer Description</h3>
                         <div className='hr'></div>
-                        <p>{this.props.beerData.description}.</p>
+                        {this.handleDescMsg()}
                     </div>
 
                     {/* RELATED BEER SECTION */}
@@ -49,12 +49,53 @@ class Beer extends Component {
             </div>
         )
     }
+
+    handleFoodMsg = () => {
+        if (this.props.beerData.foodPairings) {
+            return (
+                <p>                    {this.props.beerData.foodPairings}
+                </p>
+            )
+        } else {
+            return (
+                <p className='message'>Uh oh! Our api does not have this information. Try searching another beer!</p>
+            );
+        }
+    }
+
+    handleDescMsg = () => {
+        if (this.props.beerData.description) {
+            return (
+                <p>                    {this.props.beerData.description}
+                </p>
+            )
+        } else {
+            return (
+                <p className='message'>Uh oh! Our api does not have this information. Try searching another beer!</p>
+            );
+        }
+    }
+
+    handleRelatedBeerMsg = () => {
+        if (this.props.beerData.name) {
+            return (
+                <p>
+                    {this.props.beerData.name}
+                </p>
+            )
+        } else {
+            return (
+                <p className='message'>Uh oh! Our api does not have this information. Try searching another beer!</p>
+            );
+        }
+    }
+
 }
+
 
 function mapStateToProps(state) {
     return {
-                    beerData: state.beerData
+        beerData: state.beerData
     }
 }
 export default connect(mapStateToProps, null)(Beer);
-    

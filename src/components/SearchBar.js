@@ -12,12 +12,14 @@ class SearchBar extends Component {
     render() {
         return (
             <div className="search-bar-container">
-                <input onChange={this.handleSearchChange} type='text' placeholder='Search for a beer' value={this.props.searchInput} className='search-input-box'/>
+                <form onSubmit={this.handleSubmit}>
+                    <input onChange={this.handleSearchChange} type='text' placeholder='Search for a beer' value={this.props.searchInput} className='search-input-box' />
 
-                <div className='btn-operators'>
-                    <button onClick={this.handleBtnClick} type='button' className='go-btn'>Go</button>
-                </div>
-                
+                    <div className='btn-operators'>
+                        <button onClick={this.handleBtnClick} type='button' className='go-btn'>Go</button>
+                    </div>
+                </form>
+
             </div>
         );
     }
@@ -31,6 +33,11 @@ class SearchBar extends Component {
     handleBtnClick = (event) => {
         this.props.fetchItems(this.state.searchInput)
     }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.fetchItems(this.state.searchInput);
+      }
 
 }
 
