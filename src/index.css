@@ -46,7 +46,7 @@ p {
 }
 
 .search-bar-background {
-    background: linear-gradient( rgba(20, 20, 20, .7), rgba(20, 20, 20, .7));
+    background: linear-gradient( rgba(19, 19, 20, 0.7), rgba(20, 20, 20, .7));
     padding-bottom: 3em;
 }
 
@@ -59,6 +59,10 @@ p {
     padding-top: 30px;
     padding-bottom: 30px;
 }
+
+.logo {
+    height: 80px;
+  }
 
 
 /* SEARCH BAR */
@@ -133,7 +137,7 @@ h2.current-beer {
 /* DESCRIPTION SECTION */
 
 .beer-description-container {
-    background: linear-gradient( rgba(20, 20, 20, .7), rgba(20, 20, 20, .7)), url('https://www.kegworks.com/wp/wp-content/uploads/2014/01/savor-craft-beer-food-pairing.jpg');
+    background: linear-gradient( rgba(20, 20, 20, 0.8), rgba(20, 20, 20, .8)), url('https://discoversg.com/wp-content/uploads/sites/32/2016/02/craft-beer.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -175,13 +179,19 @@ h2.current-beer {
 @media screen and (min-width: 768px) {
     /* HEADER */
     .header {
-        background: url('https://static.vinepair.com/wp-content/uploads/2015/08/craft-beer-definition-social.jpg');
+        background: linear-gradient( rgba(27, 27, 34, 0.7), rgba(51, 50, 58, 0.7)), url('https://thealcotourist.files.wordpress.com/2017/08/img_3185.jpg?w=1060');
         background-size: cover;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center bottom;
         padding-bottom: 1em;
         color: white;
     }
+
+    .search-bar-background {
+        background: transparent;
+        padding-bottom: 3em;
+    }
+
     /* FOOD PAIRING SECTION */
     .food-pairing-container {
         margin-top: 5em;
@@ -231,59 +241,90 @@ h2.current-beer {
         padding-right: 200px;
         padding-left: 200px;
     }
-
-        /* RELATED BEER SECTION */
-        .beer-list {
-            column-width: 400px 2;
-            column-gap: 30px;
-            line-height: 2em;
-            list-style: none;
-            margin: auto auto 50px auto;
-        }
-        .beer-img {
-            display: flex;
-            justify-content: center;
-            height: 200px;
-        }
-        .related-beer-img {
-            /* background-size: cover; */
-            height: 100%;
-            background-position: center center;
-        }
+    /* RELATED BEER SECTION */
+    .beer-list {
+        column-width: 400px 2;
+        column-gap: 30px;
+        line-height: 2em;
+        list-style: none;
+        margin: auto auto 50px auto;
+    }
+    .beer-img {
+        display: flex;
+        justify-content: center;
+        height: 200px;
+    }
+    .related-beer-img {
+        /* background-size: cover; */
+        height: 100%;
+        background-position: center center;
+    }
 }
 
 @media screen and (min-width: 1440px) {
+    /* HEADER */
+    .header {
+        background:linear-gradient( rgba(20, 20, 20, .7), rgba(20, 20, 20, .7)), url('https://avlbeerweek.com/wp-content/uploads/2017/05/Cheese-Chocolate-.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding-bottom: 1em;
+        color: white;
+    }
+    /* LOGO */
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* SEARCH BAR */
+
+.search-bar-background {
+    background: transparent;
+    padding-bottom: 3em;
+}
+
+.search-bar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
     /* FOOD PAIRING SECTION */
     .food-pairing-container {
         margin-top: 5em;
         margin-bottom: 3em;
-        padding-right: 200px;
-        padding-left: 200px;
+        padding-right: 400px;
+        padding-left: 400px;
     }
     /* DESCRIPTION SECTION */
     .beer-description-container {
         display: flex;
         flex-direction: column;
-        padding-right: 200px;
-        padding-left: 200px;
+        padding-right: 400px;
+        padding-left: 400px;
     }
-
-        /* RELATED BEER SECTION */
-        .beer-list {
-            column-width: 400px 2;
-            column-gap: 30px;
-            line-height: 2em;
-            list-style: none;
-            margin: auto auto 50px auto;
-        }
-        .beer-img {
-            display: flex;
-            justify-content: center;
-            height: 200px;
-        }
-        .related-beer-img {
-            /* background-size: cover; */
-            height: 100%;
-            background-position: center center;
-        }
+    /* RELATED BEER SECTION */
+    .beer-list {
+        column-width: 400px 2;
+        column-gap: 30px;
+        line-height: 2em;
+        list-style: none;
+        margin: auto auto 50px auto;
+    }
+    .beer-img {
+        display: flex;
+        justify-content: center;
+        /* height: 200px; */
+    }
+    .related-beer-img {
+        /* background-size: cover; */
+        height: 100%;
+        background-position: center center;
+        margin-bottom: 0px;
+    }
 }
