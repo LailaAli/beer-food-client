@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 class Beer extends Component {
 
     render() {
+        console.log("//This is the differentBeer property")
+        console.log(this.props.differentBeer)
         return (
             <div className='beer-info'>
 
@@ -33,20 +35,12 @@ class Beer extends Component {
                         <h3 className='related-beer'> Beers With Similar Names</h3>
                         <div className='hr'></div>
                         <ul className='beer-list'>
-
-                            {/* {this.dataList()} */}
-
-
-                            <li>related beer</li>
-                            <li>related beer</li>
-                            <li>related beer</li>
-                            <li>related beer</li>
-                            <li>related beer</li>
-                            <li>related beer</li>
+                            {this.beerList()}
                         </ul>
-                        <div className='beer-img'>
+
+                        {/* <div className='beer-img'>
                             <img className='related-beer-img' src='http://allaboutbeer.com/wp-content/uploads/2015/09/Bottle-Lineup.jpg' /><img className='related-beer-img' src='http://allaboutbeer.com/wp-content/uploads/2015/09/Bottle-Lineup.jpg' />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
@@ -94,19 +88,21 @@ class Beer extends Component {
         }
     }
 
-/*     dataList = () => {
-        this.state.beerData.map(function (item, i) {
-            return <li key={i}>this.props.beerData.name</li>
-        })
-    } */
+    beerList = () => {
+        return this.props.differentBeer.map((beer, i) =>
+            <li key={i} > {beer.name}</li>
+        )
+    }
 
 }
 
 
 function mapStateToProps(state) {
+    console.log('//Here is the data from beerData state on beer.js"')
     console.log(state.beerData);
     return {
         beerData: state.beerData[0],
+        differentBeer: state.beerData.slice(1, 7)
     }
 }
 export default connect(mapStateToProps, null)(Beer);

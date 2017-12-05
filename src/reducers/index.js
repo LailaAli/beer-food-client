@@ -18,3 +18,4 @@ function receiveItems(state, action) {
         beerData: action.items
     });
 }
+
