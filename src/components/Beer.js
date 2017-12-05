@@ -33,6 +33,10 @@ class Beer extends Component {
                         <h3 className='related-beer'> Beers With Similar Names</h3>
                         <div className='hr'></div>
                         <ul className='beer-list'>
+
+                            {/* {this.dataList()} */}
+
+
                             <li>related beer</li>
                             <li>related beer</li>
                             <li>related beer</li>
@@ -90,12 +94,19 @@ class Beer extends Component {
         }
     }
 
+/*     dataList = () => {
+        this.state.beerData.map(function (item, i) {
+            return <li key={i}>this.props.beerData.name</li>
+        })
+    } */
+
 }
 
 
 function mapStateToProps(state) {
+    // console.log(state.beerData);
     return {
-        beerData: state.beerData
+        beerData: state.beerData[0],
     }
 }
 export default connect(mapStateToProps, null)(Beer);
