@@ -15,9 +15,13 @@ class SearchBar extends Component {
                 <form onSubmit={this.handleSubmit}>
                     <input onChange={this.handleSearchChange} type='text' placeholder='Search for a beer' value={this.props.searchInput} className='search-input-box' />
 
-                    <div className='btn-operators'>
+                    <a onClick={this.handleBtnClick} type='button'  class="fancy-btn">Search</a>
+
+
+
+                    {/* <div className='btn'>
                         <button onClick={this.handleBtnClick} type='button' className='go-btn'>Go</button>
-                    </div>
+                    </div> */}
                 </form>
 
             </div>
@@ -37,7 +41,7 @@ class SearchBar extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.fetchItems(this.state.searchInput);
-      }
+    }
 
 }
 

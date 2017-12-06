@@ -56,7 +56,7 @@ class Beer extends Component {
             )
         } else {
             return (
-                <p className='message'>Uh oh! Our api does not have this information. Try searching another beer!</p>
+                <p className='message'>Our api does not have this information yet. <br />Try searching a similar named beer from below!</p>
             );
         }
     }
@@ -64,12 +64,13 @@ class Beer extends Component {
     handleDescMsg = () => {
         if (this.props.beerData.description) {
             return (
-                <p>                    {this.props.beerData.description}
+                <p>
+                    {this.props.beerData.description}
                 </p>
             )
         } else {
             return (
-                <p className='message'>Uh oh! Our api does not have this information. Try searching another beer!</p>
+                <p className='message'>Our api does not have this information yet. <br />Try searching a similar named beer from below!</p>
             );
         }
     }
@@ -83,7 +84,7 @@ class Beer extends Component {
             )
         } else {
             return (
-                <p className='message'>Uh oh! Our api does not have this information. Try searching another beer!</p>
+                <p className='message'>Our api does not have this information yet. <br />Try searching a similar named beer from below!</p>
             );
         }
     }

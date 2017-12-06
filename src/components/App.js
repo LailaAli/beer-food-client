@@ -10,7 +10,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <div className='header'>
+                <div className='header changing-bg'>
                     <div className='search-bar-background'>
                         <div className='logo-container'>
                             <img className='logo' src={logo} />
