@@ -37,10 +37,6 @@ class Beer extends Component {
                         <ul className='beer-list'>
                             {this.beerList()}
                         </ul>
-
-                        {/* <div className='beer-img'>
-                            <img className='related-beer-img' src='http://allaboutbeer.com/wp-content/uploads/2015/09/Bottle-Lineup.jpg' /><img className='related-beer-img' src='http://allaboutbeer.com/wp-content/uploads/2015/09/Bottle-Lineup.jpg' />
-                        </div> */}
                     </div>
                 </div>
 
@@ -51,7 +47,8 @@ class Beer extends Component {
     handleFoodMsg = () => {
         if (this.props.beerData.foodPairings) {
             return (
-                <p>                    {this.props.beerData.foodPairings}
+                <p>                    
+                    {this.props.beerData.foodPairings}
                 </p>
             )
         } else {
