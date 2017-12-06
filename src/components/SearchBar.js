@@ -13,15 +13,11 @@ class SearchBar extends Component {
         return (
             <div className="search-bar-container">
                 <form onSubmit={this.handleSubmit}>
-                    <input onChange={this.handleSearchChange} type='text' placeholder='Search for a beer' value={this.props.searchInput} className='search-input-box' />
+                    <input onChange={this.handleSearchChange} type='text' placeholder='Search for a beer' value={this.state.searchInput} className='search-input-box' />
 
                     <a onClick={this.handleBtnClick} type='button'  class="fancy-btn">Search</a>
 
 
-
-                    {/* <div className='btn'>
-                        <button onClick={this.handleBtnClick} type='button' className='go-btn'>Go</button>
-                    </div> */}
                 </form>
 
             </div>
@@ -30,7 +26,7 @@ class SearchBar extends Component {
 
     handleSearchChange = (event) => {
         this.setState({
-            searchInput: event.target.value
+            searchInput: event.target.value,
         })
     }
 

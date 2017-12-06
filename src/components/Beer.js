@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
+import { FadeIn } from 'animate-components';
+import { fetchItems } from '../actions';
 import { connect } from 'react-redux';
 
 
 class Beer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            differentBeer: this.props.differentBeer
+        }
+    }
 
     render() {
         console.log("//This is the differentBeer property")
@@ -11,9 +19,12 @@ class Beer extends Component {
             <div className='beer-info'>
 
                 {/* CURRENT BEER NAME */}
+
                 <div className='current-beer-container'>
                     <h2 className='current-beer'>{this.props.beerData.name}</h2>
+
                 </div>
+
 
                 {/* FOOD PAIRING SECTION */}
                 <div className='content-flex-container'>
@@ -44,10 +55,11 @@ class Beer extends Component {
         )
     }
 
+
     handleFoodMsg = () => {
         if (this.props.beerData.foodPairings) {
             return (
-                <p>                    
+                <p>
                     {this.props.beerData.foodPairings}
                 </p>
             )
@@ -88,11 +100,23 @@ class Beer extends Component {
 
     beerList = () => {
         return this.props.differentBeer.map((beer, i) =>
-            <li key={i} > {beer.name}</li>
+            <li onClick={this.handleBtnClick} key={i} value={beer.name}> {beer.name}</li>
+
         )
+    }
+    handleBtnClick = (event) => {
+        this.setState({
+            differentBeer: event.target.value
+        })
+        console.log('//This is from the handleClkBtn');
+        console.log(this.props.differentBeer);
+        this.props.fetchItems(this.state.differentBeer);
+        console.log('//This is the click value');
+        console.log(event.target.value)
     }
 
 }
+
 
 
 function mapStateToProps(state) {
@@ -103,4 +127,6 @@ function mapStateToProps(state) {
         differentBeer: state.beerData.slice(1, 7)
     }
 }
-export default connect(mapStateToProps, null)(Beer);
+const mapActionsToProps = { fetchItems }
+
+export default connect(mapStateToProps, mapActionsToProps)(Beer);
