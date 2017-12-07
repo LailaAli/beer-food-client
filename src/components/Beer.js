@@ -1,27 +1,32 @@
 import React, { Component } from 'react';
-import { FadeIn } from 'animate-components';
+import ReactDOM from 'react-dom';
 import { fetchItems } from '../actions';
 import { connect } from 'react-redux';
+import { ClimbingBoxLoader } from 'react-spinners';
 
 
 class Beer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            differentBeer: this.props.differentBeer
+            loading: false
         }
     }
-
     render() {
-        console.log("//This is the differentBeer property")
-        console.log(this.props.differentBeer)
+        if (!this.props.beerData.name.length) {
+            return <div ><ClimbingBoxLoader
+                color={'#123abc'}
+                loading={!this.state.loading}
+            /></div>;
+        }
         return (
             <div className='beer-info'>
 
                 {/* CURRENT BEER NAME */}
 
                 <div className='current-beer-container'>
-                    <h2 className='current-beer'>{this.props.beerData.name}</h2>
+                    {/* <h2 className='current-beer'>{this.props.beerData.name}</h2> */}
+                    {this.handleNoBeer()}
 
                 </div>
 
@@ -55,6 +60,19 @@ class Beer extends Component {
         )
     }
 
+    handleNoBeer = () => {
+        if (this.props.beerData.name) {
+            return (
+                <p>
+                    <h2>{this.props.beerData.name}</h2>
+                </p>
+            )
+        } else {
+            return (
+                <p className='message'>We can't find that beer. Try searching for another beer!</p>
+            );
+        }
+    }
 
     handleFoodMsg = () => {
         if (this.props.beerData.foodPairings) {
@@ -85,10 +103,10 @@ class Beer extends Component {
     }
 
     handleRelatedBeerMsg = () => {
-        if (this.props.beerData.name) {
+        if (!this.props.beerData.name) {
             return (
                 <p>
-                    {this.props.beerData.name}
+                    {/* {this.props.beerData.name} */}
                 </p>
             )
         } else {
@@ -100,19 +118,11 @@ class Beer extends Component {
 
     beerList = () => {
         return this.props.differentBeer.map((beer, i) =>
-            <li onClick={this.handleBtnClick} key={i} value={beer.name}> {beer.name}</li>
-
+            <li onClick={this.handleBtnClick} key={i} > {beer.name}</li>
         )
     }
     handleBtnClick = (event) => {
-        this.setState({
-            differentBeer: event.target.value
-        })
-        console.log('//This is from the handleClkBtn');
-        console.log(this.props.differentBeer);
-        this.props.fetchItems(this.state.differentBeer);
-        console.log('//This is the click value');
-        console.log(event.target.value)
+        this.props.fetchItems(event.target.innerText);
     }
 
 }
@@ -120,8 +130,6 @@ class Beer extends Component {
 
 
 function mapStateToProps(state) {
-    console.log('//Here is the data from beerData state on beer.js"')
-    console.log(state.beerData);
     return {
         beerData: state.beerData[0],
         differentBeer: state.beerData.slice(1, 7)

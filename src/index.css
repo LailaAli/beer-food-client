@@ -32,6 +32,10 @@ p {
 
 li {
     letter-spacing: .1em;
+    cursor: pointer;
+}
+ul li:hover {
+    color: #fab54f;
 }
 
 .hr {

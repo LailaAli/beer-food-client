@@ -1,4 +1,4 @@
-import beer from '../components/response';
+import beer from '../components/response_start';
 
 const INITIAL_STATE = {
     beerData: [beer]
